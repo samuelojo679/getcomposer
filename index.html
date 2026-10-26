@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="home.html">
+        <img src="https://getcomposer.org/img/logo-composer-transparent.png" alt="Composer" width="30">
+    </a>
+
+    <a href="home.html">Home</a> |
+    <span>Getting Started</span> |
+    <a href="download.html">Download</a> |
+    <a href="documentation.html">Documentation</a> |
+    <a href="">Browse Packages</a>
+    <ol>
+
+        <li>
+            <a href="#">Dependency management</a>
+        </li>
+
+        <li>
+            <a href="#">System Requirements</a>
+        </li>
+
+        <li>
+            <a href="#">Installation - Linux / Unix / macOS</a>
+
+            <ol>
+                <li>
+                    <a href="#">Downloading the Composer Executable</a>
+
+                    <ol>
+                        <li>
+                            <a href="#">Locally</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Globally</a>
+                        </li>
+                    </ol>
+
+                </li>
+            </ol>
+
+        </li>
+
+        <li>
+            <a href="#">Installation - Windows</a>
+
+            <ol>
+                <li>
+                    <a href="#">Using the Installer</a>
+                </li>
+
+                <li>
+                    <a href="#">Manual Installation</a>
+                </li>
+            </ol>
+
+        </li>
+
+        <li>
+            <a href="#">Docker Image</a>
+        </li>
+
+        <li>
+            <a href="#">Using Composer</a>
+        </li>
+
+    </ol>
+
+
+    <h1>Introduction</h1>
+
+    <p>
+        Composer is a dependency manager for PHP.It allows you to declare the libraries your project depends on and
+        it will manage (install/update) them for you.
+    </p>
+    <h2>Dependency management</h2>
+
+    <p>
+        Composer is not a package manager in the same sense as Yum or Apt are.
+        Yes, it deals with "packages" or libraries, but it manages them on a
+        per-project basis, installing them in a directory (e.g. <code>vendor</code>)
+        inside your project. By default, it does not install anything globally. Thus, it is a dependency manager. It
+        does however support a "global" project for convenience via the global command.
+    </p>
+
+    <p>
+        This idea is not new and Composer is strongly inspired by node's npm and ruby's bundler.
+    </p>
+    <p>Suppose:</p>
+
+    <ol>
+        <li>
+            You have a project that depends on a number of libraries.
+        </li>
+
+        <li>
+            Some of those libraries depend on other libraries.
+        </li>
+    </ol>
+    <p>Composer:</p>
+
+    <ol>
+        <li>
+            Enables you to declare the libraries your project depends on.
+        </li>
+
+        <li>
+            Finds out which versions of which packages can and need to be installed,
+            and installs them.
+        </li>
+
+        <li>
+            You can update all your dependencies in one command.
+        </li>
+    </ol>
+    <p>
+        See the <a href="#">Basic usage</a> chapter for more details
+        on declaring dependencies.
+    </p>
+    <h2>System Requirements</h2>
+
+    <p>
+        Composer requires PHP 7.2.5 or higher to run. A long-term-support version
+        (2.2.x) still offers support for PHP 5.3.2+ in case you are stuck with a
+        legacy PHP version. A few sensitive php settings and compile flags are also required, but when using the
+        installer you will be warned about any incompatibilities.
+    </p>
+    <p>
+        Composer needs several supporting applications to work effectively, making the process of handling package
+        dependencies more efficient. For decompressing files, Composer relies on tools like 7z (or 7zz), gzip, tar,
+        unrar, unzip and xz. As for version control systems, Composer integrates seamlessly with Fossil, Git,
+        Mercurial, Perforce and Subversion, thereby ensuring the application's smooth operation and management of
+        library repositories. Before using Composer, ensure that these dependencies are correctly installed on your
+        system.
+    </p>
+
+    <p>
+        Composer is multi-platform and we strive to make it work equally well on
+        Windows, Linux and macOS.
+    </p>
+    <h2>Installation - Linux / Unix / macOS</h2>
+    <h3>Downloading the Composer Executable</h3>
+    <p>
+        Composer offers a convenient installer that you can execute directly
+        from the command line. Feel free to
+        <a href="#">download this file</a>
+        or review it on
+        <a href="#">GitHub</a>
+        if you wish to know more about the inner workings of the installer.
+        The source is plain PHP.
+    </p>
+    <p>
+        There are, in short, two ways to install Composer. Locally as part of your project, or globally as a system
+        wide executable.
+    </p>
+    <h4>Locally</h4>
+
+    <p>
+        To install Composer locally, run the installer in your project directory.
+        See <a href="#">the Download page</a> for instructions.
+    </p>
+
+    <p>
+        The installer will check a few PHP settings and then download
+        <code>composer.phar</code> to your working directory. This file is the
+        Composer binary. It is a PHAR (PHP archive), which is an archive format
+        for PHP which can be run on the command line, amongst other things.
+    </p>
+
+    <p>
+        Now run <code>php composer.phar</code> in order to run Composer.
+    </p>
+    <p>
+        You can install Composer to a specific directory by using the
+        <code>--install-dir</code> option and additionally (re)name it as well
+        using the <code>--filename</code> option. When running the installer
+        when following <a href="#">the Download page instructions</a> add the
+        following parameters:
+    </p>
+
+    <pre><code>php composer-setup.php --install-dir=bin --filename=composer</code></pre>
+
+    <p>
+        Now run <code>php bin/composer</code> in order to run Composer.
+    </p>
+    <h4>Globally</h4>
+    <p>
+        You can place the Composer PHAR anywhere you wish. If you put it in a
+        directory that is part of your <code>PATH</code>, you can access it globally.
+        On Unix systems you can even make it executable and invoke it without
+        directly using the <code>php</code> interpreter.
+    </p>
+
+    <p>
+        After running the installer following
+        <a href="#">the Download page instructions</a>
+        you can run this to move composer.phar to a directory that is in your path:
+    </p>
+
+    <pre><code>mv composer.phar /usr/local/bin/composer</code></pre>
+
+    <p>
+        If you like to install it only for your user and avoid requiring root
+        permissions, you can use <code>~/.local/bin</code> instead which is
+        available by default on some Linux distributions.
+    </p>
+
+
+    <p>
+        <strong>Note:</strong>
+        If the above fails due to permissions, you may need to run it again
+        with <code>sudo</code>.
+    </p>
+
+    <p>
+        <strong>Note:</strong>
+        On some versions of macOS the <code>/usr</code> directory does not
+        exist by default. If you receive the error
+        <code>/usr/local/bin/composer: No such file or directory</code>
+        then you must create the directory manually before proceeding:
+        <code>mkdir -p /usr/local/bin</code>.
+    </p>
+
+    <p>
+        <strong>Note:</strong>
+        For information on changing your PATH, please read the
+        <a href="https://en.wikipedia.org/wiki/PATH_(variable)">
+            Wikipedia article
+        </a>
+        and/or use your search engine of choice.
+    </p>
+
+    <p>
+        Now run <code>composer</code> in order to run Composer instead of
+        <code>php composer.phar</code>.
+    </p>
+    <h2>Installation - Windows</h2>
+
+    <h3>Using the Installer</h3>
+    <p>
+        This is the easiest way to install Composer on Windows. Download and
+        run the installer. It will install the latest Composer version and
+        set up your <code>PATH</code> so you can just call <code>composer</code>
+        from any directory in your command line.
+    </p>
+    <p>
+        <strong>Note:</strong>
+        Close your current terminal. Test usage with a new terminal:
+        this is important since the PATH will only be loaded when the terminal starts.
+    </p>
+    <h3>Manual Installation</h3>
+
+    <p>
+        Change to a directory on your <code>PATH</code> and run the installer
+        following <a href="#">the Download page instructions</a> to download
+        <code>composer.phar</code>.
+    </p>
+    <p>
+        Create a new <code>composer.bat</code> file alongside
+        <code>composer.phar</code>:
+    </p>
+    <p>Using cmd.exe:</p>
+
+    <pre><code>C:\bin&gt; echo @php "%~dp0composer.phar" %*&gt;composer.bat</code></pre>
+
+    <p>Using PowerShell:</p>
+
+    <pre><code>PS C:\bin&gt; Set-Content composer.bat '@php "%~dp0composer.phar" %*'</code></pre>
+    <h2>Docker Image</h2>
+
+    <p>
+        Composer is published as Docker container in a few places, see the list in
+        the <a href="#">composer/docker README</a>.
+    </p>
+
+    <p>Example usage:</p>
+
+    <pre><code>docker pull composer/composer
+docker run --rm -it -v "$(pwd):/app" composer/composer install</code></pre>
+
+    <p>
+        To add Composer to an existing Dockerfile you can simply copy binary file
+        from pre-built, low-size images:
+    </p>
+
+    <pre><code># Latest release
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+
+# Specific release
+COPY --from=composer/composer:2-bin /composer /usr/bin/composer</code></pre>
+
+    <p>
+        <strong>Note:</strong>
+        you need to manually install other runtime dependencies inside your image
+        when using this method; see also
+        <a href="#">https://github.com/composer/composer/blob/main/README.md#binary-dependencies</a>.
+    </p>
+
+    <p>
+        Read the <a href="#">image description</a> for further usage information.
+    </p>
+
+    <p>
+        <strong>Note:</strong>
+        Docker specific issues should be filed
+        <a href="#">on the composer/docker repository</a>.
+    </p>
+
+    <p>
+        <strong>Note:</strong>
+        You may also use <code>composer</code> instead of
+        <code>composer/composer</code> as image name above. It is shorter and is a
+        Docker official image but is not published directly by us and thus usually
+        receives new releases with a delay of a few days. Important: short-aliased
+        images don't have binary-only equivalents, so for <code>COPY --from</code>
+        approach it's better to use <code>composer/composer</code> ones.
+    </p>
+    <h2>Using Composer</h2>
+    <p>
+        Now that you have Composer installed, you may want to use it to manage
+        dependencies in your project.
+    </p>
+
+</body>
+
+</html>

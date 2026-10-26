@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Download - Composer</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <a href="home.html"><img src="Image/imgi_1_logo-composer-transparent4.png" alt="Composer Logo" width="30">
+                Home</a> |
+            <a href="Assignment1.html">Getting Started</a> |
+            <span>Download</span> |
+            <a href="documentation.html">Documentation</a> |
+            <a href="">Browse Packages</a>
+        </div>
+
+        <hr>
+
+
+        <div>
+            <h1>Download Composer</h1>
+            <p>Latest: <strong>2.10.2</strong></p>
+
+            <p>To quickly install Composer in the current directory, run the following script in your terminal. To
+                automate the installation, use the guide on installing Composer programmatically.</p>
+
+            <pre><code>php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'c8b085408188070d5f52bcfe4ecfbee5f727afa458b2573b8eaaf77b3419b0bf2768dc67c86944da1544f06fa544fd47') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"</code></pre>
+
+            <p>This installer script will simply check some php.ini settings, warn you if they are set incorrectly, and
+                then download the latest <code>composer.phar</code> in the current directory. The 4 lines above will, in
+                order:</p>
+
+            <ol>
+                <li>Download the installer to the current directory</li>
+                <li>Verify the installer SHA-384</li>
+                <li>Run the installer</li>
+                <li>Remove the installer</li>
+            </ol>
+
+            <h2>Global Install</h2>
+            <p>Most likely, you want to put the <code>composer.phar</code> into a directory on your PATH, so you can
+                simply call <code>composer</code> from any directory (Global install), using for example:</p>
+
+            <pre><code>sudo mv composer.phar /usr/local/bin/composer</code></pre>
+
+            <p><strong>WARNING:</strong> Please do not redistribute the install code. It will change with every version
+                of the installer. Instead, please link to this page or check how to install Composer programmatically.
+            </p>
+
+            <h2>Notable Installer Options</h2>
+
+            <h3>--install-dir</h3>
+            <p>You can install composer to a specific directory by using the <code>--install-dir</code> option and
+                providing a target directory. Example:</p>
+            <pre><code>php composer-setup.php --install-dir=bin</code></pre>
+
+            <h3>--filename</h3>
+            <p>You can specify the filename (default: <code>composer.phar</code>) using the <code>--filename</code>
+                option. Example:</p>
+            <pre><code>php composer-setup.php --filename=composer</code></pre>
+
+            <h3>--version</h3>
+            <p>You can install composer to a specific release by using the <code>--version</code> option and providing a
+                target release. Example:</p>
+            <pre><code>php composer-setup.php --version=1.0.0-alpha8</code></pre>
+
+            <h2>Manual Download</h2>
+            <p>If you prefer to download the phar manually, here are the available versions:</p>
+            <ul>
+                <li><a href="">Latest Stable</a> for PHP 7.2+ users</li>
+                <li><a href="">Latest Preview (alpha/beta/RC)</a></li>
+                <li><a href="">Latest Snapshot</a></li>
+                <li><a href="">Latest 2.x</a></li>
+                <li><a href="">Latest 2.2.x LTS</a> for PHP 5.3 to 7.1</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- Footer Area -->
+        <div>
+            <p>
+                Authors: <a href="">Nils Adermann</a>,
+                <a href="">Jordi Boggiano</a>
+                and many <a href="">community contributions</a>
+            </p>
+            <p>
+                Commercial support &amp; consulting available through:<br>
+                <a href="">
+                    <img src="Image/imgi_2_private-packagist-logo-horizontal-2025.png" alt="Private Packagist"
+                        width="240">
+                </a><br>
+                <a href="">Sponsor Composer &amp; Packagist.org</a>
+            </p>
+            <p>
+                Composer and all content on this site are released under the <a href="">MIT license</a>.
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>
